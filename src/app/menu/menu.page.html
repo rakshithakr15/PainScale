@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="moon"></ion-icon>
+      <ion-label>
+        Toggle Dark Theme
+      </ion-label>
+      <ion-toggle  (ionChange)="onClick($event)"  id="themeToggle" slot="end"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Call a Doctor</ion-label>
+      <ion-label>+1800-101-0101</ion-label>
+        <ion-icon class="dial-icon" (click)="onCall()" name="call" alt="Click to Call"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

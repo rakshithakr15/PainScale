@@ -1,0 +1,9 @@
+ {
+ "dashboardData":{
+    "bodyParts":["Head", "Neck", "Shoulders", "Arms", "Right Elbow", "Left Elbow", "Wrist", "Back", "Chest", "Heart",
+        "Abdomen", "Right Leg", "Left Leg", "Right Knee", "Left Knee", "Right Toe", "Left Toe"],
+    "causes":["Sitting", "Standing", "Sleeplessness", "Stress", "Food", "Work"],
+    "effects":["Aching", "Burning", "Pins and Needles", "Throbbing"],
+    "symptoms":["Irregular Breathing","Dizziness", "Weakness", "Anxiety", "Depression"]
+ }
+}

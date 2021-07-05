@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="start">Pain Scale</ion-title>
+    <ion-img slot="end" class="avatar" src="assets\images\face.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h3 class="title-query1">How is your pain now?</h3>
+  <ion-item lines="none" class="slider">
+    <ion-range min="0" max="10" pin="true" ticks="true" color="secondary" [(ngModel)]="newItem.scale">
+      <ion-label slot="start" class="slider-marker">0</ion-label>
+      <ion-label slot="end" class="slider-marker">10</ion-label>
+    </ion-range>
+  </ion-item>
+  <ion-text class="pain-tag-1">No Pain</ion-text>
+  <ion-text class="pain-tag-2">Extreme Pain</ion-text>
+
+  <div class="card top-card">
+    <ion-item lines="none" class="select-options">
+      <ion-label>What made your pain worse?</ion-label>
+      <ion-select class="custom-options" multiple="true" [(ngModel)]="newItem.cause" slot="end">
+        <ion-select-option *ngFor = "let cause of causes" [value]="cause">{{cause}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="card">
+    <ion-item lines="none" class="select-options">
+      <ion-label>Where do you feel pain?</ion-label>
+      <ion-select multiple="true" [(ngModel)]="newItem.bodyPart" slot="end">
+        <ion-select-option *ngFor = "let part of bodyParts" [value]="part">{{part}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="card">
+    <ion-item lines="none" class="select-options">
+      <ion-label>What best describes your pain?</ion-label>
+      <ion-select class="custom-options" multiple="true" [(ngModel)]="newItem.effect" slot="end">
+        <ion-select-option *ngFor="let effect of effects" [value]="effect">{{effect}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="card">
+    <ion-item lines="none" class="select-options">
+      <ion-label>What besides pain are you feeling?</ion-label>
+      <ion-select class="custom-options" multiple="true" [(ngModel)]="newItem.symptoms" slot="end">
+        <ion-select-option *ngFor="let symptom of symptoms" [value]="symptom">{{symptom}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="card">
+    <ion-label class="med-label">What medication did you take?</ion-label>
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="newItem.medicine"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="card">
+    <ion-item lines="none">
+      <ion-label slot="start">Brief Notes</ion-label>
+      <ion-textarea slot="start" [(ngModel)]="newItem.notes"></ion-textarea>
+    </ion-item>
+  </div>
+
+  <div class="card">
+    <ion-label class="med-label">How long did your pain last?</ion-label>
+    <ion-item lines="none" class="date-item">
+      <ion-label>Date</ion-label>
+      <ion-datetime value="2021-07-07" picker-format="DD-MM-YYYY" displayFormat="DD-MMM" placeholder="Select Date" 
+      [(ngModel)]="newItem.startDate"></ion-datetime>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Start Time</ion-label>
+      <ion-datetime display-format="h:mm A" picker-format="h:mm A" placeholder="Select Start Time"  [value]="defaultDate" [(ngModel)]="newItem.startTime"></ion-datetime>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>End Time</ion-label>
+      <ion-datetime display-format="h:mm A" picker-format="h:mm A" placeholder="Select End Time" [value]="defaultDate" [(ngModel)]="newItem.endTime"></ion-datetime>
+    </ion-item>
+  </div>
+
+  <ion-button expand="full" class="submit-button" (click)="addItem()">Add Record</ion-button>
+
+</ion-content>

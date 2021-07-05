@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Logs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list #myList>
+
+    <ion-item-sliding *ngFor="let item of items" class="slider">
+      <ion-item lines="none">
+        <ion-icon name="chevron-back-outline" alt="swipe" slot="end"></ion-icon>
+
+        <ionlabel class="flex-container">
+          <div class="log-list numberCircle">
+          <ion-text class="">{{ item.scale }}
+          </ion-text>
+        </div>
+        </ionlabel>
+        <ul>
+            <p class="log-date" *ngIf="item.startDate">{{ item.startDate | date: 'dd-MMM-yy'}}</p>
+            <li *ngIf="item.bodyPart">{{ item.bodyPart }}</li>
+            <li *ngIf="item.cause">{{ item.cause }}</li>
+            <li *ngIf="item.effect">{{ item.effect }}</li>
+            <li *ngIf="item.symptom">{{ item.symptom }}</li>
+            <li *ngIf="item.medicine">{{ item.medicine }}</li>
+          </ul>
+      </ion-item>
+   
+
+      <ion-item-options side="end">
+        <ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>
+        <ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>

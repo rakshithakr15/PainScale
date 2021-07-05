@@ -1,0 +1,8 @@
+{
+  "name": "Pain Scale",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

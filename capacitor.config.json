@@ -1,0 +1,6 @@
+{
+  "appId": "com.ionic.painScale",
+  "appName": "Pain Scale",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
