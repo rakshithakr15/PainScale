@@ -15,11 +15,14 @@ ng build
 For Android Devices:
 ionic capacitor add android
 ionic capacitor run android
+ionic capacitor run android -l (Live reload)
+ionic capacitor sync android
 
 For IOS Devices:
 ionic capacitor add ios
 ionic capacitor run ios
-
+ionic capacitor run ios -l (Live reload)
+ionic capacitor sync ios
 
 
 
