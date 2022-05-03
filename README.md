@@ -1,4 +1,4 @@
-Welcome to Pain Scae App
+Welcome to Pain Scale App
 
 How to use
 1) Run `npm install` in the extracted project
